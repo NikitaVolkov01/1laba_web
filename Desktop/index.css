@@ -1,174 +1,123 @@
+* {
+    font-family: Courier New, monospace;
+}
+
 td {
-  color: white;
-  font-size: 25px;
-  border: 5px solid #5476d3;
-  margin-left: 30px;
-  opacity: 0.85;
-  width: 5%;
+    color: #ddcaca;
+    font-size: 25px;
+    border: 5px solid #2e3f83;
+    margin-left: 30px;
+    opacity: 0.85;
+    width: 5%;
 }
 
-.dannye {
-  display: flex;
-  justify-content: center;
-}
-
-
-.paragraf {
-  color: white;
-  border: 8px solid #5476d3;
-  display: flex;
-  justify-content: center;
-  font-size: 18px;
-  border-radius: 20px;
-  box-shadow: 10px 10px 7px black;
-  width: 98%;
-}
-
-.logo {
-  color: white;
-  background-color: white;
-  border: 10px solid #5476d3;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  box-shadow: 10px 10px 10px black;
-  font-size: 30px;
-}
-
-.knopka {
-  color: #ffffff;
-  border: 8px solid #5476d3;
-  display: inline-block;
-  width: 99%;
-  left: 100px;
-  box-shadow: 6px 6px 6px black;
-  font-size: 25px;
-  background: #000000;
-
-}
-
-.eee {
-  color: black;
-}
 
 .table {
-  font-size: 1px;
-  height: 20%;
-  width: 100%;
+    font-size: 1px;
+    height: 20%;
+    width: 100%;
 }
 
-input[type=radio],
-input[type=checkbox] {
+.form_radio_btn {
+    display: inline-block;
+    margin-left: 10px;
 
-  visibility: hidden;
-  position: left;
+}
+.form_radio_btn input[type=radio] {
+    display: none;
+}
+.form_radio_btn label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0px 15px;
+    line-height: 30px;
+    border: 1px solid #999;
+    border-radius: 6px;
+    user-select: none;
 }
 
-input[type=radio]+label:before,
-input[type=checkbox]+label:before {
-  height: 12px;
-  width: 12px;
-  margin-right: 2px;
-  content: " ";
-  display: inline-block;
-  vertical-align: baseline;
-  border: 2px solid #777;
+/* Checked */
+.form_radio_btn input[type=radio]:checked + label {
+    background: #3a5da5;
 }
 
-input[type=radio]:checked+label:before,
-input[type=checkbox]:checked+label:before {
-  background: #fe9004;
-}
-
-input[type=radio]+label:before {
-  border-radius: 50%;
-}
-
-input[type=checkbox]+label:before {
-  border-radius: 2px;
-}
-
-
-
-body {
-  font: 13pt Arial, Helvetica, sans-serif;
-  /* Шрифт теста */
-  
-  
-}
-
-h2 {
-  font-size: 18px;
-  /* Размер шрифта в заголовке */
-  color: #c216b6;
-  /* Цвет заголовка */
-  margin-top: 0;
-  /* Отступ сверху */
+/* Hover */
+.form_radio_btn label:hover {
+    color: #666;
 }
 
 .container {
-  width: 1300px;
-  /* Ширина слоя */
-  margin: 0 auto;
-  /* Выравнивнить весь блок по центру */
-  background: #8fa09b;
-  /* Цвет фона левой колонки */
-  border: 2px solid #5476d3;
-  box-shadow: 15px 15px 15px ;
+    text-align: left;
+    width: 920px;
+    /* Ширина слоя */
+    margin: 0 auto;
+    /* Выравнивнить весь блок по центру */
+    background: #2e3f83;
+    /* Цвет фона левой колонки */
+    border: 2px solid #0b246e;
+    box-shadow: 15px 15px 15px ;
 }
 
 .header {
-  
-  font-family: Tahoma, sans-serif;
-  font-size: 38px;
-  /* Размер текста в шапке */
-  text-align: center;
-  /* Выравнивание текст шапки по центру */
-  padding: 5px;
-  /* Отступы внутри блока шапки */
-  background: #5476d3;
-  /* Цвет фона шапки */
-  color: #fff;
-  /* Цвет текста */
-  text-transform: uppercase;
+    font-size: 25px;
+    /* Размер текста в шапке */
+    text-align: center;
+    /* Выравнивание текст шапки по центру */
+    padding: 5px;
+    /* Отступы внутри блока шапки */
+    background: #0b246e;
+    /* Цвет фона шапки */
+    color: #fff;
+    /* Цвет текста */
+    text-transform: uppercase;
 }
 
 .sidebar {
-  margin-top: 0px;
-  width: 220px;
-  /* Ширина блока */
-  padding: 0px 0px;
-  /* Отступы внутри левого блока */
-  float: right;
-  /* Обтекание блока по левому краю */
-  border: 5px solid #5476d3;
-  height: 270px;
+
+    margin-top: 0;
+    width: 220px;
+    /* Ширина блока */
+    padding: 0 0;
+    /* Отступы внутри левого блока */
+    float: right;
+    /* Обтекание блока по левому краю */
+    border: 5px solid #0b246e;
+    height: 270px;
+}
+.form_input{
+    margin-top:  30px;
+}
+
+.form_button {
+    margin-left:  60px;
 }
 
 .content {
-  margin-right: 230px;
-  /* Отступ справа */
-  padding: 10px;
-  /* Отступы внутри правого блока */
-  background: #000000;
-  /* Цвет фона правого блока */
-  border: 5px solid #5476d3;
-  height: 250px;
-  
-  
-  
+
+    margin-right: 230px;
+    /* Отступ справа */
+    padding: 10px;
+    /* Отступы внутри правого блока */
+    background: #1d4875;
+    /* Цвет фона правого блока */
+    border: 5px solid #0b246e;
+    height: 250px;
+
+
+
 }
+
 
 .footer {
-  background: #000000;
-  /* Цвет фона нижнего блока-подвала */
-  color: #fff;
-  /* Цвет текста подвала */
-  padding: 5px;
-  /* Отступы внутри блока */
-  clear: right;
-  /* Отменяем действие float */
-  border: 2px solid #5476d3; /*#5476d3*/
+    background: #1d4875;
+    /* Цвет фона нижнего блока-подвала */
+    color: #fff;
+    /* Цвет текста подвала */
+    padding: 5px;
+    /* Отступы внутри блока */
+    clear: right;
+    /* Отменяем действие float */
+    border: 2px solid #0b246e; /*#5476d3*/
+    width: 910px;
 
 }
-

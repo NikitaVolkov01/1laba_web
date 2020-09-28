@@ -1,22 +1,20 @@
 <DOCTYPE html>
-<html lang='en'> 
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>1 Laba Web</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
+    <body background="web.gif">
+    <div class="container">
 
-<head>  
-  <title> 1 Laba Web </title> 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
-  <link rel="stylesheet" type="text/css" href="index.css">  
-</head>
+        <div class="header">
+            Волков Никита и Карпова Софья P3230 Вариант 2613
+        </div>
 
-  <body background="fon1.jpg">
-      <div class="container">
-
-         <div class="header">
-            Волков Никита P3230
-         </div>
-
-         <div class="sidebar"> 
-             <img id="img" src="web.jpg" alt="GG" width=220px height="270px">
-         </div>
+        <div class="sidebar">
+            <img id="img" src="web.jpg" alt="GG" width=220px height="270px">
+        </div>
 
         
 
@@ -24,32 +22,60 @@
 
                     <div>
 
-                        <form name="myForm" action="index.php" onsubmit="return validateForm()"  method="get">
+                        <form name="myForm" action="index.php" onsubmit="return validateForm()"  method="post">
 
-                        
-                          <p class="paragraf">Выберете координату X из предлагаемых:
-                           <input type = "radio" name = "x" value="-2" id="-2" > <label for="-2"> -2 </label> 
-                           <input type = "radio" name = "x" value="-1.5" id="-1.5" > <label for="-1.5"> -1.5 </label> 
-                           <input type = "radio" name = "x" value="-1" id="-1" > <label for="-1"> -1 </label> 
-                           <input type = "radio" name = "x" value="-0,5" id="-0.5"> <label for="-0.5"> -0.5 </label> 
-                           <input type = "radio" name = "x" value="0" id="0" > <label for="0"> 0 </label> 
-                           <input type = "radio" name = "x" value="0,5" id="0.5" > <label for="0.5"> 0.5 </label> 
-                           <input type = "radio" name = "x" value="1" id="1" > <label for="1"> 1 </label> 
-                           <input type = "radio" name = "x" value="1,5" id="1.5" > <label for="1.5"> 1.5 </label> 
-                           <input type = "radio" name = "x" value="2" id="2" > <label for="2"> 2 </label> 
-                          </p> 
-                                    
-                          <p class="paragraf">Введите координату Y (-5 ; 5) : <input type="text" name="y"> </p>
-                                    
-                          <p class="paragraf">Выберете R из предлагаемых:     
-                           <input type="checkbox" name="R" value="1" id="checkbox1"> <label for="checkbox1"> 1 </label>
-                           <input type="checkbox" name="R" value="2" id="checkbox2"> <label for="checkbox2"> 2 </label>
-                           <input type="checkbox" name="R" value="3" id="checkbox3"> <label for="checkbox3"> 3 </label>
-                           <input type="checkbox" name="R" value="4" id="checkbox4"> <label for="checkbox4"> 4 </label>
-                           <input type="checkbox" name="R" value="5" id="checkbox5"> <label for="checkbox5"> 5 </label>
-                          </p>
-                        
-                          <input class="knopka" type="submit" value="Нажми , чтобы отправить данные"   >
+
+                            <input type = "text" name ="x" placeholder="X [-5; 5]">
+                            <br>
+                            <input id="y_input" class="form_input" placeholder="Y" disabled>
+                            <label for="y_input"></label>
+                            <select id = "y-input" name = "y">
+                                <option value="-4">-4</option>
+                                <option value="-3">-3</option>
+                                <option value="-2">-2</option>
+                                <option value="-1">-1</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                            <br>
+                            <input id="r_input" class="form_input" placeholder="R" disabled>
+                            <br>
+                            <br>
+                            <label for="form_radio_group"> </label>
+                            <div id="valueR">
+
+                                <div class="form_radio_btn">
+                                    <input id="radio-1" type="radio" name="R" value="1" checked>
+                                    <label for="radio-1">1</label>
+                                </div>
+
+                                <div class="form_radio_btn">
+                                    <input id="radio-2" type="radio" name="R" value="2" checked>
+                                    <label for="radio-2">2</label>
+                                </div>
+
+                                <div class="form_radio_btn">
+                                    <input id="radio-3" type="radio" name="R" value="3" checked>
+                                    <label for="radio-3">3</label>
+                                </div>
+
+                                <div class="form_radio_btn">
+                                    <input id="radio-4" type="radio" name="R" value="4" checked>
+                                    <label for="radio-4">4</label>
+                                </div>
+
+                                <div class="form_radio_btn">
+                                    <input id="radio-5" type="radio" name="R" value="5" checked>
+                                    <label for="radio-5">5</label>
+                                </div>
+
+                            </div>
+                            <br>
+                            <br>
+                          <input class="knopka" type="submit" value="Нажми, чтобы отправить данные, пожалуйста"   >
                        
                         </form> 
 
@@ -59,7 +85,7 @@
               <?php
               session_start();
               if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
-              if (isset($_GET['x']) and isset($_GET['y']) and isset($_GET['R'])) {
+              if (isset($_POST['x']) and isset($_POST['y']) and isset($_POST['R'])) {
                   $_SESSION['counter']++;
               }
               ?>
@@ -82,50 +108,44 @@
                                   {
                                     var bool=true;
                                     var radio_check_val = "";
-                                        for (i = 0; i < document.getElementsByName('x').length; i++) {
-                                            if (document.getElementsByName('x')[i].checked) {
+                                        for (i = 0; i < document.getElementsByName('R').length; i++) {
+                                            if (document.getElementsByName('R')[i].checked) {
                                                
-                                                radio_check_val = document.getElementsByName('x')[i].value;        
+                                                radio_check_val = document.getElementsByName('R')[i].value;
                                             }        
                                         }
                                         if (radio_check_val === "")
                                         {
-                                            alert("Координата X долнжа быть выбрана");
+                                            alert("Значение R долнжа быть выбрана");
                                             bool=false;
                                         }     
                       
 
-                                
-                              var checkbox_check_val = "";
-                              for (i = 0; i < document.getElementsByName('R').length; i++) {
-                                  if (document.getElementsByName('R')[i].checked) {
-                                     
-                                      checkbox_check_val = document.getElementsByName('R')[i].value;        
-                                  }        
-                              }
-                              if (checkbox_check_val === "")
-                              {
-                                  alert("значение R долнжо быть выбрано");
-                                  bool=false;
-                              } 
 
-                      var x=document.forms["myForm"]["y"].value;
-                        if (x==null || x==""){
-                          alert("Y обязательно должно быть введено");
-                          bool=false;
-                          }
-                          else{
-                          r1 = /^-{0,1}[0-4]\.\d*$/;
-                          r2 = /^-{0,1}[0-4]$/;
-                          if(r1.test(x)==false && r2.test(x)==false){
-                            alert('Значение Y введено неправильно');
-                          bool=false;
-                            }
+                      var x=document.forms["myForm"]["x"].value;
+                                      var r1;
+                                      if (x == null || x == "") {
+                                          alert("X обязательно должно быть введено");
+                                          bool = false;
+                                      } else {
+
+                                          r1 = /[+-]?([0-9]*[.])?[0-9]+$/;
+
+                                          if (r1.test(x) == false) {
+                                              alert('Значение X введено неправильно');
+                                              bool = false;
+                                          }
+                                          else {
+
+                                              if ((Number(x) > 5) || (Number(x) < -5)){
+                                                  alert('Значение X введено вне диапазона');
+                                                  bool=false;
+                                          }
+                                      }
+
                           }
                           return bool;
                         }
-                        if(typeof window.history.pushState == 'function') {
-                        window.history.pushState({}, "Hide", "https://se.ifmo.ru/~s285595/1.0/index.php"); }
 
                   </script>
      </div>
